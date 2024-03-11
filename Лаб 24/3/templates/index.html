@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Главная страница</h1>
+    {% if logged_in %}
+        <p>Добро пожаловать, Админ!</p>
+        <a href="/logout">Выход</a>
+    {% else %}
+        <p>Вы не авторизованы.</p>
+        <a href="/login">Выход</a>
+    {% endif %}
+</body>
+</html>
