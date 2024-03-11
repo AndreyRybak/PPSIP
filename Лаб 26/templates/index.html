@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каталог продукции</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+    function addToCart(productId) {
+        $.ajax({
+            url: '/add_to_cart',
+            method: 'POST',
+            data: { productId: productId },
+            success: function(response) {
+                alert('Товар добавлен в корзину!');
+            }
+        });
+    }
+</script>
+
+</head>
+<body>
+    <h1>Каталог продукции</h1>
+    <button onclick="sortProducts('name')">Сортировать по названию</button>
+    <button onclick="sortProducts('price')">Сортировать по цене</button>
+    <button onclick="sortProducts('category')">Сортировать по категории</button>
+    <div id="products-table">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Категория</th>
+                <th>Добавить в корзину</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product[0] }}</td>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }}</td>
+                <td>{{ product[3] }}</td>
+               <td><button onclick="addToCart('{{ product[0] }}')">Добавить</button></td>
+
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+    <div id="cart">
+        <h2>Корзина</h2>
+        <ul id="cart-items">
+            <!-- Здесь будет отображаться содержимое корзины -->
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title> egerrg</title>
+        <style>
+            #name {
+width: 300px;
+            }
+            #phone {
+width: 300px;
+            }
+            #dop {
+width: 300px;
+height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+Экспресс заказ
+        <form onsubmit="submitForm()">
+            <div class="form-floating"> 
+                <label>
+                    <input type="text" name="name" id="name" placeholder="Ваше имя" required autofocus>
+                    </label>
+                    <br>
+                    <label>
+                    <br>
+                    <input type="text" name="phone" id="phone" placeholder="Ваш номер телефона" required autofocus>
+                  </label>
+                  <br>
+                  <label>
+                    Адрес доставки и дополнительная информация
+                    <br>
+                    <input type="text" name="dop" id="dop" placeholder="">                    
+                  </label>
+
+            </div>
+            
+
+                
+                <br>
+                <input type="submit" value="Заказать" class="btn btn-primary">
+        </form>
+    </body>
+    <script src="./main1.js"></script>
+</html>
