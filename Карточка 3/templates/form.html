@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма регистрации</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Форма регистрации</h2>
+    <form action="/" method="post">
+        <br>
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required>
+<br>
+        <label>Ваш пол:</label>
+        <br>
+        <input type="radio" id="муж" name="gender" value="муж">
+        <label for="муж">Мужской</label>
+        <br>
+        <input type="radio" id="жен" name="gender" value="жен">
+        <label for="жен">Женский</label>
+<br>
+        <label for="maiden_name">Ваша девичья фамилия:</label>
+        <br>
+        <input type="text" id="maiden_name" name="maiden_name">
+<br>
+        <input type="checkbox" id="army" name="army">
+        <label for="army">Служили в армии</label>
+<br>
+        <label for="military_rank">Воинское звание:</label>
+        <br>
+        <input type="text" id="military_rank" name="military_rank">
+
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+</body>
+</html>
