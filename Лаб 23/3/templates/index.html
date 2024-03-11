@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текущая дата</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Текущая дата: <span id="current-date"></span></h1>
+    <button id="get-date-btn">Получить дату</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#get-date-btn").click(function() {
+                $.ajax({
+                    url: "/get_date",
+                    type: "GET",
+                    success: function(response) {
+                        $("#current-date").text(response.date);
+                    },
+                    error: function(error) {
+                        console.log("Произошла ошибка:", error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
